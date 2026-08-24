@@ -102,6 +102,7 @@ const formConfig = computed(() => {
       model: "image",
       prop: "image",
       isImage: true,
+      fileTypes: ['jpg', 'png', 'gif'],
       width: 24,
       required: true,
     },

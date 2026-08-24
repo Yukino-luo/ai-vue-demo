@@ -7,7 +7,7 @@ import ColumnMyText from './model/column-text-my.jsx'
 import '@yukino-luo/ai-ui/packages/ai-ui/dist/style.css'
 
 createApp(App)
-.use(AiUI, { aiLocale: aiZhCn })
+.use(AiUI, { aiLocale: aiZhCn, apiBaseUrl: 'https://api.yukino-luo.com', uploadAction: '/common/upload' })
 .use((app, options) => {
     const tableColumnHook = AiUI.useTableColumn()
     const formItemHook = AiUI.useFormItem()

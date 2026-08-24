@@ -89,7 +89,7 @@ export const useUserList = () => {
     },
     {
       id: 3,
-      image: '',
+      image: 'https://yukino-luo.oss-cn-chengdu.aliyuncs.com/ai-vue-demo/1787381214057.jpg',
       name: '二二',
       role: 3,
       switch: true,
@@ -100,7 +100,7 @@ export const useUserList = () => {
     },
     {
       id: 4,
-      image: '',
+      image: 'https://yukino-luo.oss-cn-chengdu.aliyuncs.com/ai-vue-demo/1787381247936.jpg',
       name: '三三',
       role: 1,
       switch: false,

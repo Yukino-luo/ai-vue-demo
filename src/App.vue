@@ -5,7 +5,7 @@
       <AiList
         v-if="tabConfig.active === 1"
         row-key="id"
-        ref="List"
+        ref="UserListEl"
         :tab-config="tabConfig"
         :list-model="userList"
         :search-model="userSearchModel"
@@ -19,7 +19,7 @@
       <AiList
         v-if="tabConfig.active === 2"
         row-key="id"
-        ref="List2"
+        ref="OrderListEl"
         :tab-config="tabConfig"
         :list-model="orderList"
         :search-model="orderSearchModel"
@@ -29,26 +29,43 @@
         :settingConfig="orderSettingConfig"
         @search="handleOrderSearch"
       ></AiList>
+      <AiList
+        v-if="tabConfig.active === 3"
+        row-key="id"
+        ref="GoodsListEl"
+        :tab-config="tabConfig"
+        :list-model="'list'"
+        :search-url="'/goods/list'"
+        :search-model="goodsSearchModel"
+        :list-config="goodsListConfig"
+        :search-config="goodsSearchConfig"
+        :action-Config="goodsActionConfig"
+        :settingConfig="goodsSettingConfig"
+      ></AiList>
     </section>
     <UserInfo v-model="showUserInfo" :pageType="userPageType" :userInfo="userInfo" />
     <OrderInfo v-model="showOrderInfo" :pageType="orderPageType" :orderInfo="orderInfo" />
+    <GoodsInfo v-model="showGoodsInfo" :pageType="goodsPageType" :goodsInfo="goodsInfo" @confirm="handleGoodsRefresh" />
   </main>
 </template>
 
 <script setup>
+import { reactive, ref, computed, getCurrentInstance } from 'vue'
 import UserInfo from './components/UserInfo.vue'
 import OrderInfo from './components/OrderInfo.vue'
-import { reactive, ref, computed, getCurrentInstance } from 'vue'
+import GoodsInfo from './components/GoodsInfo.vue'
 import { useUserList } from './hooks/useUserList'
 import { useOrderList } from './hooks/useOrderList'
+import { useGoodsList } from './hooks/useGoodsList'
 
 const { proxy } = getCurrentInstance()
 
 const tabConfig = reactive({
-  active: 1,
+  active: 3,
   tabs: [
     { label: '常规列表', key: 1 },
-    { label: '可编辑列表', key: 2 }
+    { label: '可编辑列表', key: 2 },
+    { label: '异步列表', key: 3 },
   ]
 })
 
@@ -78,4 +95,17 @@ const {
   orderSettingConfig,
   handleOrderSearch
 } = useOrderList()
+
+const {
+  GoodsListEl,
+  showGoodsInfo,
+  goodsPageType,
+  goodsInfo,
+  goodsSearchModel,
+  goodsSearchConfig,
+  goodsListConfig,
+  goodsActionConfig,
+  goodsSettingConfig,
+  handleGoodsRefresh
+} = useGoodsList()
 </script>
