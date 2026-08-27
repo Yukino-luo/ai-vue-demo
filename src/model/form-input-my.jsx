@@ -13,7 +13,7 @@ export default class FormMyInput extends FormDefault {
         label="My Input"
         prop={this.getModelName(config)}
         modelValue={this.getModelValue(config, model)}
-        placeholder={this.getI18nValue(config.placeholder)}
+        placeholder={config.placeholder}
         width={config.width}
         clearable={config.clearable ?? true}
         disabled={config.disabled}

@@ -61,7 +61,7 @@ import { useGoodsList } from './hooks/useGoodsList'
 const { proxy } = getCurrentInstance()
 
 const tabConfig = reactive({
-  active: 3,
+  active: 1,
   tabs: [
     { label: '常规列表', key: 1 },
     { label: '可编辑列表', key: 2 },

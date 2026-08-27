@@ -14,7 +14,7 @@
 import { ref, reactive, inject, computed } from 'vue'
 import { CurrencyList } from '../hooks/useGoodsList'
 
-const { http } = inject('$global')
+const { apiHttp } = inject('$global')
 
 const modelValue = defineModel({ type: Boolean, default: false })
 const props = defineProps({
@@ -203,7 +203,7 @@ const handleConfirm = () => {
           totalInventory: formInfo.totalInventory,
           status: 1
         }
-        http({
+        apiHttp({
           method: 'post',
           url: '/goods/create',
           data: { data },
@@ -214,7 +214,7 @@ const handleConfirm = () => {
           handleClose()
         })
       } else if (props.pageType === 'edit') {
-        http({
+        apiHttp({
           method: 'post',
           url: '/goods/update',
           data: { data: formInfo },

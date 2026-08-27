@@ -17,7 +17,7 @@ export const useGoodsList = () => {
   const goodsInfo = ref({})
   const GoodsListEl = ref()
 
-  const { http } = inject('$global')
+  const { apiHttp } = inject('$global')
 
   const goodsSearchModel = reactive({
     data: {
@@ -205,7 +205,7 @@ export const useGoodsList = () => {
             icon: 'DeleteFilled',
             clickFun: ({ row }) => {
               window.ElMessageBox.confirm('确定要删除吗？', '删除', { type: 'error' }).then(() => {
-                http({
+                apiHttp({
                   method: 'post',
                   url: '/goods/delete',
                   data: { id: row.id },
