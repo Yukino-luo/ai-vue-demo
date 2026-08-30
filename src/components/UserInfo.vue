@@ -74,7 +74,7 @@ const formConfig = computed(() => {
       required: true,
       dictList: regionOptions,
       dictKey: "value",
-      dictValue: "label",
+      dictLabel: "label",
     },
     {
       key: "createTime",

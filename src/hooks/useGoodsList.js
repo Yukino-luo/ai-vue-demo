@@ -1,14 +1,14 @@
 import { ref, reactive, computed, watch, inject } from 'vue'
 
 export const CurrencyList = [
-  { dictValue: 'CNY', dictKey: 'CNY' },
-  { dictValue: 'USD', dictKey: 'USD' },
-  { dictValue: 'EUR', dictKey: 'EUR' }
+  { dictLabel: 'CNY', dictKey: 'CNY' },
+  { dictLabel: 'USD', dictKey: 'USD' },
+  { dictLabel: 'EUR', dictKey: 'EUR' }
 ]
 
 export const statusOptions = [
-  { dictKey: 0, dictValue: '下架' },
-  { dictKey: 1, dictValue: '上架' }
+  { dictKey: 0, dictLabel: '下架' },
+  { dictKey: 1, dictLabel: '上架' }
 ]
 
 export const useGoodsList = () => {

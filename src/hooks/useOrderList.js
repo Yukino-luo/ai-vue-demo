@@ -1,39 +1,39 @@
 import { ref, reactive, computed, watch } from 'vue'
 
 export const BillingSettlementStatus = [
-  { dictKey: 1, dictValue: '待结算' },
-  { dictKey: 2, dictValue: '结算中' },
-  { dictKey: 3, dictValue: '人工结算' },
-  { dictKey: 4, dictValue: '系统结算' }
+  { dictKey: 1, dictLabel: '待结算' },
+  { dictKey: 2, dictLabel: '结算中' },
+  { dictKey: 3, dictLabel: '人工结算' },
+  { dictKey: 4, dictLabel: '系统结算' }
 ]
 export const BillingConfirmationStatus = [
-  { dictKey: 1, dictValue: '待确认' },
-  { dictKey: 2, dictValue: '人工确认' },
-  { dictKey: 3, dictValue: '系统确认' }
+  { dictKey: 1, dictLabel: '待确认' },
+  { dictKey: 2, dictLabel: '人工确认' },
+  { dictKey: 3, dictLabel: '系统确认' }
 ]
 export const BillingPublishStatus = [
-  { dictKey: 1, dictValue: '待发布' },
-  { dictKey: 2, dictValue: '发布中' },
-  { dictKey: 3, dictValue: '已发布' },
-  { dictKey: 99, dictValue: '发布失败' }
+  { dictKey: 1, dictLabel: '待发布' },
+  { dictKey: 2, dictLabel: '发布中' },
+  { dictKey: 3, dictLabel: '已发布' },
+  { dictKey: 99, dictLabel: '发布失败' }
 ]
 export const companyList = [
-  { dictKey: '1', dictValue: '企业A' },
-  { dictKey: '2', dictValue: '企业B' },
-  { dictKey: '3', dictValue: '企业C' },
-  { dictKey: '4', dictValue: '企业D' },
-  { dictKey: '5', dictValue: '企业E' },
-  { dictKey: '6', dictValue: '企业F' },
-  { dictKey: '7', dictValue: '企业G' },
-  { dictKey: '8', dictValue: '企业H' },
-  { dictKey: '9', dictValue: '企业I' },
-  { dictKey: '10', dictValue: '企业J' }
+  { dictKey: '1', dictLabel: '企业A' },
+  { dictKey: '2', dictLabel: '企业B' },
+  { dictKey: '3', dictLabel: '企业C' },
+  { dictKey: '4', dictLabel: '企业D' },
+  { dictKey: '5', dictLabel: '企业E' },
+  { dictKey: '6', dictLabel: '企业F' },
+  { dictKey: '7', dictLabel: '企业G' },
+  { dictKey: '8', dictLabel: '企业H' },
+  { dictKey: '9', dictLabel: '企业I' },
+  { dictKey: '10', dictLabel: '企业J' }
 ]
 
 export const CurrencyList = [
-  { dictValue: 'CNY', dictKey: 'CNY' },
-  { dictValue: 'USD', dictKey: 'USD' },
-  { dictValue: 'EUR', dictKey: 'EUR' }
+  { dictLabel: 'CNY', dictKey: 'CNY' },
+  { dictLabel: 'USD', dictKey: 'USD' },
+  { dictLabel: 'EUR', dictKey: 'EUR' }
 ]
 
 export const useOrderList = () => {

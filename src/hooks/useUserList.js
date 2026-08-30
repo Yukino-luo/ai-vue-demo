@@ -37,26 +37,26 @@ export const regionOptions = [
 ]
 
 export const roleOptions = [
-  { dictKey: 1, dictValue: '管理员' },
-  { dictKey: 2, dictValue: '研发' },
-  { dictKey: 3, dictValue: '产品' },
-  { dictKey: 4, dictValue: '运营' }
+  { dictKey: 1, dictLabel: '管理员' },
+  { dictKey: 2, dictLabel: '研发' },
+  { dictKey: 3, dictLabel: '产品' },
+  { dictKey: 4, dictLabel: '运营' }
 ]
 
 export const statusOptions = [
-  { dictKey: 1, dictValue: '在线' },
-  { dictKey: 2, dictValue: '离线' },
-  { dictKey: 3, dictValue: '忙碌' },
-  { dictKey: 4, dictValue: '会议中' }
+  { dictKey: 1, dictLabel: '在线' },
+  { dictKey: 2, dictLabel: '离线' },
+  { dictKey: 3, dictLabel: '忙碌' },
+  { dictKey: 4, dictLabel: '会议中' }
 ]
 
 export const tagList = [
-  { dictValue: 'test', dictKey: 't' },
-  { dictValue: '标签1', dictKey: 't1' },
-  { dictValue: '标签2', dictKey: 't2' },
-  { dictValue: '标签3', dictKey: 't3' },
-  { dictValue: '标签4', dictKey: 't4' },
-  { dictValue: '标签5', dictKey: 't5' }
+  { dictLabel: 'test', dictKey: 't' },
+  { dictLabel: '标签1', dictKey: 't1' },
+  { dictLabel: '标签2', dictKey: 't2' },
+  { dictLabel: '标签3', dictKey: 't3' },
+  { dictLabel: '标签4', dictKey: 't4' },
+  { dictLabel: '标签5', dictKey: 't5' }
 ]
 
 export const useUserList = () => {
@@ -298,7 +298,7 @@ export const useUserList = () => {
         model: 'region',
         isTree: true,
         dictKey: 'value',
-        dictValue: 'label',
+        dictLabel: 'label',
         dictList: regionOptions
       },
       {
@@ -322,7 +322,7 @@ export const useUserList = () => {
         model: (row) => {
           if (!row?.tags || !row?.tags.length) return []
           return row.tags.map((item) => {
-            return tagList.find((tag) => tag.dictKey == item)?.dictValue ?? item
+            return tagList.find((tag) => tag.dictKey == item)?.dictLabel ?? item
           })
         }
       },

@@ -23,7 +23,7 @@ export default class FormMyInput extends FormDefault {
         showPreSelect={config.showPreSelect ?? false}
         dictList={config.dictList}
         dictKey={config.dictKey}
-        dictValue={config.dictValue}
+        dictLabel={config.dictLabel}
         maxLength={config.maxLength}
         regExp={config.regExp}
         regMsg={config.regMsg}
