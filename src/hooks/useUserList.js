@@ -1,4 +1,4 @@
-import { ref, reactive, computed, watch } from 'vue'
+import { ref, reactive, computed, inject, watch } from 'vue'
 
 export const regionOptions = [
   {
@@ -60,6 +60,8 @@ export const tagList = [
 ]
 
 export const useUserList = () => {
+  const { ElMessageBox } = inject('$global')
+
   const showUserInfo = ref(false)
   const userPageType = ref('add')
   const userInfo = ref({})
@@ -373,15 +375,14 @@ export const useUserList = () => {
             label: '执行',
             icon: 'SwitchButton',
             clickFun: ({ row }) => {
-              window.ElMessageBox.confirm('确定要执行吗？', '执行', {type: 'warning'})
+              ElMessageBox.confirm('确定要执行吗？', '执行', {type: 'warning'})
             }
           },
           {
             label: '删除',
             icon: 'DeleteFilled',
             clickFun: ({ row }) => {
-              window.ElMessageBox.confirm('确定要删除吗？', '删除', {type: 'error'})
-
+              ElMessageBox.confirm('确定要删除吗？', '删除', {type: 'error'})
             }
           }
         ]
@@ -442,7 +443,7 @@ export const useUserList = () => {
   const handleUserSearch = () => {
     const title = '搜索条件'
     const message = `${JSON.stringify(userSearchModel)}`
-    window.ElMessageBox.confirm(message, title, {})
+    ElMessageBox.confirm(message, title, {})
   }
 
   return {

@@ -1,4 +1,4 @@
-import { ref, reactive, computed, watch } from 'vue'
+import { ref, reactive, computed, inject, watch } from 'vue'
 
 export const BillingSettlementStatus = [
   { dictKey: 1, dictLabel: '待结算' },
@@ -37,6 +37,8 @@ export const CurrencyList = [
 ]
 
 export const useOrderList = () => {
+  const { ElMessageBox } = inject('$global')
+
   const showOrderInfo = ref(false)
   const orderPageType = ref('add')
   const orderInfo = ref({})
@@ -644,7 +646,7 @@ export const useOrderList = () => {
   const handleOrderSearch = (searchModel) => {
     const title = '搜索条件'
     const message = `${JSON.stringify(orderSearchModel)}`
-    window.ElMessageBox.confirm(message, title, {})
+    ElMessageBox.confirm(message, title, {})
   }
 
   return {
